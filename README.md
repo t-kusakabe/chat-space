@@ -1,24 +1,58 @@
-# README
+# db_design
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### usersテーブル
 
-Things you may want to cover:
+|column|
+|:--|
+|id|
+|name|
+|email|
+|password|
+|password_confirmation|
+|timestamp|
 
-* Ruby version
+### messagesテーブル
 
-* System dependencies
+|column|
+|:--|
+|id|
+|text|
+|image|
+|user_id|
+|chat_group_id|
+| timestamp|
 
-* Configuration
+### chat_groupsテーブル
 
-* Database creation
+|column|
+|:--|
+|id|
+|name|
 
-* Database initialization
+### chat_group_usersテーブル
 
-* How to run the test suite
+|column|
+|:--|
+|id|
+|user_id|
+|chat_group_id|
 
-* Services (job queues, cache servers, search engines, etc.)
+## association
 
-* Deployment instructions
+### usersテーブル
++ has_many chat_group_users
++ has_many chat_groups through chat_group_users
++ has_many messages
 
-* ...
+### messagesテーブル
++ belongs_to user
++ belongs_to chat_group
+
+### chat_groupsテーブル
++ has_many messages
++ has_many chat_group_users
++ has_many users through chat_group_users
+
+### chat_group_usersテーブル
++ belongs_to user
++ belongs_to chat_group
