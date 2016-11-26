@@ -6,7 +6,7 @@
 |:--|
 |id|
 |name|
-|main_address|
+|email|
 |password|
 |password_confirmation|
 |timestamp|
@@ -29,17 +29,19 @@
 |id|
 |name|
 
-### group_membersテーブル
+### chat_group_usersテーブル
 
 |column|
 |:--|
+|id|
 |user_id|
 |chat_group_id|
 
 ## association
 
 ### usersテーブル
-+ has_many group_memvers
++ has_many chat_group_users
++ has_many chat_groups through chat_group_users
 + has_many messages
 
 ### messagesテーブル
@@ -48,8 +50,9 @@
 
 ### chat_groupsテーブル
 + has_many messages
-+ has_many group_members
++ has_many chat_group_users
++ has_many users through chat_group_users
 
-### group_membersテーブル
+### chat_group_usersテーブル
 + belongs_to user
 + belongs_to chat_group
