@@ -1,3 +1,51 @@
-// Place all the styles related to the chat_groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$font_white: #FFF;
+
+.chat-side {
+  display: inline-block;
+  height: 100vh;
+  width: 300px;
+  background-color: #2F3E51;
+  color: $font_white;
+
+  .chat-user {
+    height: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 60px;
+    background-color: #253141;
+
+    &__name {
+      display: inline-block;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    &__action {
+      float: right;
+      margin-left: 10px;
+      color: $font_white;
+    }
+  }
+
+  .chat-groups {
+    .chat-group {
+      padding: 20px;
+
+      &__link {
+        text-decoration: none;
+        color: $font_white;
+      }
+
+      &__name {
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+
+      &__message {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 11px;
+      }
+    }
+  }
+}
