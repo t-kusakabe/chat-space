@@ -1,0 +1,53 @@
+@mixin calc($property, $expression) { 
+  #{$property}: -moz-calc(#{$expression}); 
+  #{$property}: -o-calc(#{$expression}); 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+}
+
+.chat-main {
+  display: inline-block;
+  @include calc(width, '100vw - 300px');
+  height: 100vh;
+  float: right;
+
+  &__header {
+    height: 100px;
+    padding: 0 40px;
+ 
+    &__group-info {
+      display: inline-block;
+      margin-top: 35px;
+      
+      &__name {
+        letter-spacing: 2px;
+        font-size: 20px;
+        color: #333;
+      }
+
+      &__members, &__members a {
+        margin-top: 15px;
+        text-decoration: none;
+        font-size: 12px;
+        color: #999;
+      }
+    }
+
+    &__edit-button {
+      display: inline-block;
+      height: 40px;
+      margin-top: 28px;
+      float: right;
+      line-height: 40px;
+      font-size: 14px;
+
+      a {
+        display: inline-block;
+        padding: 0 20px;
+        text-decoration: none;
+        border: 2px solid;
+        color: #38aef0;
+      }
+    }
+  }
+}
