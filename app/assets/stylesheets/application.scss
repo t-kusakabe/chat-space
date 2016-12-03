@@ -1,0 +1,12 @@
+@import './reset';
+@import 'font-awesome';
+@import './config/_color';
+@import './config/_variable';
+@import './mixin/_calc';
+@import './mixin/_webkit';
+@import './chat_groups';
+@import './messages';
+
+* {
+  font-family: 'Hiragino Kaku Gothic ProN';
+}

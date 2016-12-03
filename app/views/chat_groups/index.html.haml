@@ -1,0 +1,20 @@
+.chat-side
+  .chat-user
+    %h5.chat-user__name user name
+    %span.chat-user__actions
+      %a.chat-user__action{ href: '#' }
+        = fa_icon 'cog'
+      %a.chat-user__action{ href: '#' }
+        = fa_icon 'pencil-square-o'
+
+  .chat-groups
+    %ul
+      %li.chat-group
+        %a.chat-group__link{ href: '#' }
+          %p.chat-group__name group name1 
+          %p.chat-group__message message1 
+      %li.chat-group
+        %a.chat-group__link{ href: '#' }
+          %p.chat-group__name group name2
+          %p.chat-group__message message2
+      
