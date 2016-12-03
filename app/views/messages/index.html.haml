@@ -8,8 +8,7 @@
       .chat-main__header__group-info__members
         Members: 
         = link_to 'foo', '#'
-    .chat-main__header__edit-button
-      = link_to 'Edit', '#'
+    = link_to 'Edit', '#', class: 'chat-main__header__edit-button'
 
   .chat-main__body
     .chat-messages
@@ -33,5 +32,5 @@
       = text_area_tag :message, '', placeholder: 'type a message', class: 'chat-main__footer__form'
       = label_tag :iamge, class: 'chat-main__footer__form__image' do
         = file_field_tag :image, class: 'chat-main__footer__form__image--none'
-        = fa_icon 'file-image-o'
+        = fa_icon 'picture-o'
       = submit_tag 'Send', class: 'chat-main__footer__button'
