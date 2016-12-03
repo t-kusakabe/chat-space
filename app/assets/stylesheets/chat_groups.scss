@@ -26,6 +26,9 @@
   }
 
   .chat-groups {
+    @include calc(height, '100vh - 100px');
+    overflow: scroll;
+
     .chat-group {
       padding: 20px;
 
