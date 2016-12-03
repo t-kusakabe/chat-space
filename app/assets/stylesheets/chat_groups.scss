@@ -1,10 +1,8 @@
-$font_white: #FFF;
-
 .chat-side {
   display: inline-block;
   height: 100vh;
   width: 300px;
-  background-color: #2F3E51;
+  background-color: $back_color_black;
   color: $font_white;
 
   .chat-user {
@@ -12,7 +10,7 @@ $font_white: #FFF;
     padding: 20px;
     box-sizing: border-box;
     line-height: 60px;
-    background-color: #253141;
+    background-color: back_color_light_black;
 
     &__name {
       display: inline-block;
