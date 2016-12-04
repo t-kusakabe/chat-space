@@ -2,9 +2,9 @@
   .chat-user
     %h5.chat-user__name user name
     %span.chat-user__actions
-      %a.chat-user__action{ href: '#' }
+      = link_to edit_user_registration_path, class: 'chat-user__action' do
         = fa_icon 'cog'
-      %a.chat-user__action{ href: '#' }
+      = link_to '#', class: 'chat-user__action' do
         = fa_icon 'pencil-square-o'
 
   .chat-groups
