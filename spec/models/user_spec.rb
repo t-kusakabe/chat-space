@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User' do 
-  describe '#create' do
+  describe 'validation' do
     context 'Is validation done?' do
       it 'Can save users' do
         user = build(:user)
