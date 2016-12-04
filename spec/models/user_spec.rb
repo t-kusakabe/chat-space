@@ -10,7 +10,7 @@ describe 'User' do
     it 'can not save without name' do
       user = build(:user, name: '')
       user.valid?
-      expect(user.errors[:name].first).to include('blank')
+      expect(user.errors[:name]).to include('を入力してください')
     end
   end
 end
