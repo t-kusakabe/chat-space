@@ -2,12 +2,12 @@ require 'rails_helper'
 
 describe 'User' do 
   describe 'validation' do
-    it 'Can save users' do
+    it 'can save user' do
       user = build(:user)
       expect(user).to be_valid
     end
 
-    it 'Can not save without name' do
+    it 'can not save without name' do
       user = build(:user, name: '')
       user.valid?
       expect(user.errors[:name].first).to include('blank')
