@@ -30,7 +30,7 @@
 
   .chat-groups {
     @include calc(height, "100vh - #{$header_height}");
-    overflow: scroll;
+    @include overflow-scroll;
 
     .chat-group {
       padding: 20px;
