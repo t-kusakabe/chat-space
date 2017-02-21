@@ -5,3 +5,11 @@
       -ms-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+@mixin overflow-scroll {
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
