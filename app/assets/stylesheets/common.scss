@@ -1,0 +1,7 @@
+* {
+  font-family: 'Hiragino Kaku Gothic ProN';
+}
+
+body {
+  @include overflow-scroll;
+}
