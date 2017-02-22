@@ -7,11 +7,11 @@
   &__header {
     height: 100px;
     padding: 0 40px;
- 
+
     &__group-info {
       display: inline-block;
       margin-top: 35px;
-      
+
       &__name {
         letter-spacing: 2px;
         font-size: 20px;
@@ -43,7 +43,7 @@
   &__body {
     @include calc(height, '100vh - #{$header_height} - #{$footer_height}');
     border-top: 1px solid $border_color;
-    overflow: scroll;
+    @include overflow-scroll;
     background-color: $bg_gray;
 
     .chat-messages {
