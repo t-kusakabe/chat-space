@@ -1,38 +1,36 @@
 .chat-group-form
   %h1
     新規チャットグループ
-  %form#new_chat_group.new_chat_group{ accept: { charset: 'UTF-8' }, action: '/chat_groups', method: 'post' }
-    %input{ name: 'utf8', type: 'hidden', value: '✓' }
-    %input{ name: 'authenticity_token', type: 'hidden', value: 'AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA==' }
+  #new_chat_group.new_chat_group
+    = form_for @group do |f|
+      .chat-group-form__field
+        .chat-group-form__field--left
+          .chat-group-form__label
+            = f.label :グループ名
+        .chat-group-form__field--right
+          #chat_group_name
+            = f.text_field :name, placeholder: 'グループ名を入力してください', class: 'chat-group-form__input form-control'
+      .chat-group-form__field
+        .chat-group-form__field--left
+          .chat-group-form__label
+            = f.label :チャットメンバーを追加
+        .chat-group-form__field--right
+          .chat-group-form__search
+            = f.text_field :id, placeholder: '追加したいユーザー名を入力してください', class: 'chat-group-form__input form-control'
+          #user-search-result
 
-    .chat-group-form__field
-      .chat-group-form__field--left
-        %label.chat-group-form__label{ for: 'chat_group_name' }
-          グループ名
-      .chat-group-form__field--right
-        %input#chat_group_name.chat-group-form__input.form-control{ name: 'chat_group[name]', placeholder: 'グループ名を入力してください', type: 'text' }
+      .chat-group-form__field
+        .chat-group-form__field--left
+          .chat-group-form__label
+            = f.label :チャットメンバー
+        .chat-group-form__field--right
+          #chat-group-users
+            #chat-group-user-22
+              = f.text_field :name, placeholder: 'ユーザー名を入力', class: 'chat-group-user form-control'
+              %p
+                seo_kyohei
 
-    .chat-group-form__field
-      .chat-group-form__field--left
-        %label.chat-group-form__label{ for: 'chat_group_チャットメンバーを追加' }
-          チャットメンバーを追加
-      .chat-group-form__field--right
-        .chat-group-form__search
-          %input#user-search-field.chat-group-form__input.form-control{ placeholder: '追加したいユーザー名を入力してください', type: 'text' }
-        #user-search-result
-
-    .chat-group-form__field
-      .chat-group-form__field--left
-        %label.chat-group-form__label{ for: 'chat_group_チャットメンバー' }
-          チャットメンバー
-      .chat-group-form__field--right
-        #chat-group-users
-          #chat-group-user-22.chat-group-user
-            %input{ name: 'chat_group[user_ids][]', type: 'hidden', value: '22' }
-            %p
-              seo_kyohei
-
-    .chat-group-form__field
-      .chat-group-form__field--left
-      .chat-group-form__field--right
-        %input.chat-group-form__action-btn{ data: { disable: { with: 'Save' }}, name: 'commit', type: 'submit', value: 'Save' }
+      .chat-group-form__field
+        .chat-group-form__field--left
+        .chat-group-form__field--right
+          = f.submit :Save, class: 'chat-group-form__action-btn'
