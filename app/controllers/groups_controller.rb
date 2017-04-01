@@ -8,9 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    Group.create(group_params)
-
-    redirect_to group_messages_path(params[:group][:id])
+    redirect_to group_messages_path(Group.create(group_params))
   end
 
   private
