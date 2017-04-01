@@ -1,0 +1,2 @@
+class GroupUsersThrough < ApplicationRecord
+end
