@@ -12,6 +12,13 @@ class GroupsController < ApplicationController
     redirect_to group_messages_path(Group.create(group_params))
   end
 
+  def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+  end
+
   private
 
   def group_params
