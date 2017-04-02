@@ -17,6 +17,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do

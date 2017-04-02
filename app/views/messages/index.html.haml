@@ -8,7 +8,7 @@
       .chat-main__header__group-info__members
         Members:
         = link_to 'foo', '#'
-    = link_to 'Edit', '#', class: 'chat-main__header__edit-button'
+    = link_to 'Edit', edit_group_path(@group), class: 'chat-main__header__edit-button'
 
   .chat-main__body
     .chat-messages
